@@ -2,7 +2,7 @@
 title: Farmhelp
 date: 2023-11-01
 image: /assets/images/dynamic/logo.gif
-description: Firmware for the unPhone, a souped-up ESP32 with an LCD touchscreen, to control televisions from a number of manufacturers.
+description: A plant detection Flutter app aims to provide diease detection and insights about plants.
 tags:
   - Flutter
   - Dart
