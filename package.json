@@ -4,6 +4,7 @@
   "description": "Personal site and portfolio of freelance developer Gopal Kumar.",
   "author": "Gopal Kumar",
   "private": true,
+  "license": "Apache-2.0",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
