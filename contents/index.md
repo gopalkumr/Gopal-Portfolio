@@ -7,4 +7,5 @@ My curiosity extends to cloud computing, where I've been harnessing the power of
 With a finger on the pulse of emerging technologies and a heart dedicated to innovation, I am on a mission to bridge the gap between theoretical knowledge and practical application. Through my academic pursuits and hands-on projects, I aspire to contribute meaningfully to the ever-evolving landscape of technology. Join me on this exciting journey of exploration, creation, and continuous improvement in the realm of Information Technology. I'm actively involved in various university communities, including [MLSC](https://www.linkedin.com/company/mlsckare/mycompany/).
 
 See more about me down below.   
+There's Ton's of things is Yet to be added, so stay tuned.
 Built with ❤️ and [Nuxt.js](https://nuxtjs.org) and [Tailwind CSS](https://tailwindcss.com)
