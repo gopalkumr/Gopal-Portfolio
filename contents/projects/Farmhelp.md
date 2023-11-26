@@ -96,7 +96,8 @@ During my third year of university, I undertook a module on the Internet of Thin
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="https://github.com/gopalkumr/farmhelp/raw/main/images/loginscreen.png" alt="Login Screen">
+![Farmhelp Sign up](/assets/images/dynamic/farmhelp/signup.png)
+
 
 project screenshot is yet to be added 
 
@@ -244,7 +245,8 @@ Sachin Singh [@sachin-singh-57a474206](https://www.linkedin.com/in/sachin-singh-
 
 ## The High Level design for this app
 
-<img src="https://github.com/gopalkumr/farmhelp/raw/main/images/system_design.png" alt="Logo" width="600" height="400">
+![Farmhelp HLD](/assets/images/dynamic/farmhelp/HLD.png)
+
 
 
 <!-- ACKNOWLEDGMENTS -->
