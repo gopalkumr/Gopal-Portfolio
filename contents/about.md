@@ -1,5 +1,7 @@
 Hey there, tech enthusiasts! 👋 I'm Gopal Kumar, and I'm on a thrilling journey exploring the vast and dynamic world of technology. Let me take you through my passion-filled adventure in the realm of bits and bytes.
 
+If you're Looking for resume, please click here [Resume](https://bit.ly/gopalkumr)
+
 ## 🚀 A Tech Odyssey
 
 From an early age, I found myself captivated by the magic of technology. The endless possibilities and the power to transform ideas into reality fascinated me. This fascination has evolved into a burning passion that propels me forward in my academic and professional pursuits.

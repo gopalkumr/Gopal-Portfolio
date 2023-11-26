@@ -96,7 +96,7 @@ During my third year of university, I undertook a module on the Internet of Thin
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Farmhelp Sign up](/assets/images/dynamic/farmhelp/signup.png)
+![Farmhelp Sign up](/assets/images/dynamic/farmhelp/signup.png){:height="50px" width="50px"}
 
 
 project screenshot is yet to be added 
