@@ -2,7 +2,7 @@ import GoTrue from 'gotrue-js'
 import Vue from 'vue'
 
 const auth = new GoTrue({
-  APIUrl: 'https://gregives.co.uk/.netlify/identity',
+  APIUrl: 'https://gopalkumr.netlify.app/.netlify/identity',
   setCookie: true
 })
 

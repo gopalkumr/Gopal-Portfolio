@@ -7,7 +7,7 @@
       <div class="about__image">
         <lazy-image
           src="/assets/images/dynamic/gopal1.jpg"
-          alt="Greg Ives at HackSheffield"
+          alt="Gopal"
           sizes="(min-width: 768px) 50vw, 100vw"
         />
       </div>

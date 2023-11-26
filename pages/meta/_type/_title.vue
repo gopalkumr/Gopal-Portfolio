@@ -6,7 +6,7 @@
     <h1 v-else class="meta__title">
       Hi, I’m <span class="meta__title--primary">Gopal Kumar</span>
     </h1>
-    <p class="meta__link">gregives.co.uk</p>
+    <p class="meta__link">gopalkumr.netlify.app</p>
   </main>
 </template>
 

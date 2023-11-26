@@ -32,4 +32,5 @@ export const postSlugs = [
   'optimising-the-fonts-on-my-website',
   'styling-a-sectionlist-in-react-native',
   'Leading-the-MLSC-As-an-Core-Team-Member',
+  'How-to-Get-Azure-credits-for-Students',
 ]

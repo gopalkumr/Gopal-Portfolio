@@ -165,10 +165,10 @@ Instead, we can follow the [custom reCAPTCHA 2](https://docs.netlify.com/forms/s
 Firstly, let's create a new site in the Google reCAPTCHA console:
 
 1. Go to [the page to create a new reCAPTCHA](https://www.google.com/recaptcha/admin/create)
-2. Make a label for your reCAPTCHA site, I set mine as `gregives.co.uk`
+2. Make a label for your reCAPTCHA site, I set mine as `gopalkumr.netlify.app`
 3. Select `reCAPTCHA v2` for the reCAPTCHA type, Netlify doesn't support v3 yet
 4. Select `Invisible reCAPTCHA badge` (we'll make the reCAPTCHA widget invisible later)
-5. Add your domains, for example, `gregives.co.uk` **and `localhost` for testing**
+5. Add your domains, for example, `gopalkumr.netlify.app` **and `localhost` for testing**
 6. Add any other owners and accept the reCAPTCHA Terms of Service
 
 ### Setting up the Environment Variables

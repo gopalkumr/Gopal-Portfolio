@@ -52,12 +52,12 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://gregives.co.uk${this.project.link}`
+          content: `https://gopalkumr.netlify.app${this.project.link}`
         },
         {
           hid: 'og:image',
           property: 'og:image',
-          content: `https://gregives.co.uk${this.project.link}og.png`
+          content: `https://gopalkumr.netlify.app${this.project.link}og.png`
         }
       ]
     }

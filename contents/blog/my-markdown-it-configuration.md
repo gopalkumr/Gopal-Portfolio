@@ -10,7 +10,7 @@ tags:
 
 <post-aside type="info">
 
-My Markdown configuration has changed considerably since I wrote this blog post but this is still a good starting point! If you want to view my updated configuration, [view the source on GitHub](https://github.com/gregives/gregives.co.uk/blob/master/config/markdown.js).
+My Markdown configuration has changed considerably since I wrote this blog post but this is still a good starting point! If you want to view my updated configuration, [view the source on GitHub](https://github.com/gopalkumr/gopal-portfolio/blob/main/config/markdown.js).
 
 </post-aside>
 
