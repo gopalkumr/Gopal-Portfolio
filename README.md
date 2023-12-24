@@ -1,6 +1,6 @@
 
 
-Personal site and portfolio of  Gopal Kumar, built with [Nuxt.js](https://nuxtjs.org), [vue.js](https://vuejs.org) and deployed with [Vercel](https://www.vercel.com/).
+Personal site and portfolio of  Gopal Kumar, built with [Nuxt.js](https://nuxtjs.org), [vue.js](https://vuejs.org) and deployed with [netlify](https://www.netlify.com/).
 
 ---
 
