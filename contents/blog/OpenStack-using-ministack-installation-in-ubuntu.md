@@ -118,9 +118,6 @@ Now you can use the username and password to login into openstack. once you logi
 
 ![OPENSTACK VERSION](/assets/images/dynamic/openstack/openstack-page.png)
 
-This Blog is being updated. Please Pardon if you find any mistake or report us at gopalkumargupta337@gmail.com
-
-Last Updated 22:57 18th March 2024
 
 ## The short summary of command you can type is 
 
@@ -140,3 +137,8 @@ http://localhost/auth/login/
 
 username: admin
 password: password you got from command 
+
+
+This Blog is being updated. Please Pardon if you find any mistake or report us at gopalkumargupta337@gmail.com
+
+Last Updated 10:59 19th March 2024
