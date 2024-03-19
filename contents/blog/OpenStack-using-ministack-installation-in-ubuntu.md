@@ -108,7 +108,7 @@ http://<your-ip-address>/auth/login/
 or
 
 ```sh
-https://localhost/auth/login/
+http://localhost/auth/login/
 ```
 the page should look like this
 
@@ -122,3 +122,21 @@ This Blog is being updated. Please Pardon if you find any mistake or report us a
 
 Last Updated 22:57 18th March 2024
 
+## The short summary of command you can type is 
+
+```sh
+sudo snap install microstack --beta
+sudo microstack init --auto --control
+
+```
+
+```sh
+sudo snap get microstack config.credentials.keystone-password
+```
+go to
+```sh
+http://localhost/auth/login/
+```
+
+username: admin
+password: password you got from command 
