@@ -139,6 +139,17 @@ username: admin
 password: password you got from command 
 
 
+you can use following commmand to stop the microstack to avoid the memory consumption when not in use.
+
+```sh
+sudo snap disable microstack
+```
+and you can restart the microstack using following command
+
+```sh
+sudo snap enable microstack
+```
+
 This Blog is being updated. Please Pardon if you find any mistake or report us at gopalkumargupta337@gmail.com
 
 Last Updated 10:59 19th March 2024
