@@ -31,11 +31,7 @@ There's genral ways to install Hadoop but that required a lot of configuration a
 
 ## Installation of Docker in Ubuntu
 
-To Get started with Hadoop using Docker in Ubuntu, you need to have Docker installed in your system. If you don't have Docker installed in your system, you can install docker by following the link below.
-
-[https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)
-
-or just copy and paste the command in terminal
+To Get started with Hadoop using Docker in Ubuntu, you need to have Docker installed in your system. If you don't have Docker installed in your system,  just copy and paste the command in terminal
   
   ```sh
 # Add Docker's official GPG key:
@@ -77,7 +73,7 @@ once you have cloned the repo, Now it's time to run the docker container using t
 
 ```sh
 cd Hadoop-on-Docker
-docker-compose up -d
+sudo docker-compose up -d
 docker container ls
 ```
 
@@ -86,12 +82,12 @@ Now you have to copy the namenode folder from cloned repository to the docker co
 go to the cloned repository and run the following command
 
 ```sh
-docker cp code namenode:/
+sudo docker cp code namenode:/
 ```
 then execute the command to enter into the namenode container
   
   ```sh
-  docker exec -it namenode /bin/bash
+ sudo docker exec -it namenode /bin/bash
   ```
 Now it's time to create a directory in HDFS using the following command
 
