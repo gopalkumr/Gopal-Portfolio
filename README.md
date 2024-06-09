@@ -4,6 +4,15 @@ Personal site and portfolio of  Gopal Kumar, built with [Nuxt.js](https://nuxtjs
 
 ---
 
+To run this project, create .env file and add the following environment variables:
+
+```bash
+# .env
+APIFLASH_API_KEY="YOUR_APIFLASH_API_KEY"
+SITE_RECAPTCHA_KEY="YOUR_SITE_RECAPTCHA_KEY"
+```
+
+
 Primary color `#35f`
 
 Fonts:
