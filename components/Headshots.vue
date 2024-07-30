@@ -18,7 +18,7 @@
         <img
           :src="preview"
           :class="{ 'lazy__image--load': mounted }"
-          alt="Interactive photo of Greg Ives"
+          alt="Interactive photo of Gopal"
           class="lazy__image"
           width="3150"
           height="2400"

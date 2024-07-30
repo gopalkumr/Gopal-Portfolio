@@ -58,7 +58,7 @@ export const openGraphTags = [
   {
     hid: 'og:description',
     property: 'og:description',
-    content: 'Personal site and portfolio of freelance developer Greg Ives.'
+    content: 'Personal site and portfolio of Gopal Kumar.'
   },
   {
     hid: 'og:url',

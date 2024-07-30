@@ -31,13 +31,7 @@ In this series of blog posts, I'm going to detail how I use Markdown for the con
 
 In my opinion, Markdown is a fantastic middle ground between writing markup (for example, HTML) and writing normal text. It allows you to express everything you might need in a blog post, like _italics_, **emphasis**, `inline code` and images with a very concise syntax.
 
-```md
-# An Example Blog Post
 
-May look something like this. It's easy to **emphasise** words, link to [other sites](https://gregiv.es), write `inline code` or standalone code blocks, and add images.
-
-![Smiley face for Markdown](smiley.gif)
-```
 
 ## Loading Markdown Files
 
