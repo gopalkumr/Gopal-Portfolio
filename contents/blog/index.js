@@ -35,5 +35,6 @@ export const postSlugs = [
   'How-to-Get-Azure-credits-for-Students',
   'IASF-2024-STUDENT-FORUM',
   'OpenStack-using-ministack-installation-in-ubuntu',
-  'install-hadoop-using-docker'
+  'install-hadoop-using-docker',
+  'Internship-at-IITD'
 ]

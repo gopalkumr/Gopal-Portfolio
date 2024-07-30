@@ -1,5 +1,5 @@
 ---
-title: Install Hadoop using Docker in Ubuntu
+title: Install Hadoop using Docker in deb Unix
 
 date: 2024-03-24
 
@@ -17,7 +17,7 @@ tags:
 
 ![Hadoop-on-docker](/assets/images/dynamic/hadoop/Hadoop-using-docker.png)
 
-In This article we will be discussing about the installation of Hadoop using Docker in Ubuntu. 
+In This article we will be discussing about the installation of Hadoop using Docker in Debian Unix. 
 There's genral ways to install Hadoop but that required a lot of configuration and setup. But Docker makes it easy to install Hadoop in your system.
 
 
