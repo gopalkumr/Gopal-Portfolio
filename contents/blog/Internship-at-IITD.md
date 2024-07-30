@@ -3,7 +3,7 @@ title: Internship Experience at IIT Delhi
 
 date: 2024-06-01
 
-description: Expriance as an Research and Development intern at IIT Delhi.
+description: Expriance as a Research and Development intern at IIT Delhi.
 
 tags:
   - Machine learning
