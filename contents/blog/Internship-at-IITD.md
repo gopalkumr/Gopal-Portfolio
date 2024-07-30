@@ -47,14 +47,13 @@ Everyday work starts with the meeting with team and our Professor Dr Akash Sondh
 
 We've got challenging project to complete.
 Here's the problem statement:
-```
+
 In the recent year, India have faced many incident where the public gathering was not managed properly. However we can't blame to the public authorities for the same. Country Like india have massive population and it's not easy to manage the crowd. So, we were asked to develop a Machine Learning Model which can predict the mismanagement in Public gathering and can help in managing the crowd.
 
 The model will be deployed in the drone and it will be used to monitor the public gathering. The model will predict the mismanagement in the crowd and will alert the authorities to take necessary actions. The model will be trained on the historical data of public gathering incidents and will use Machine Learning algorithms to predict the mismanagement in real-time.
 
 We will share the technical details of the project, Stay Tune.
 
-```
 
 ## Learning Opportunities
 
