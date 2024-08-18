@@ -41,5 +41,6 @@ export const projectSlugs = [
 
 
   'Farmhelp',
+  'Flutter-animated-rive'
 
 ]

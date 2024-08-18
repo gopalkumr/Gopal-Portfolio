@@ -1,8 +1,8 @@
 ---
 title: Farmhelp
 date: 2023-11-01
-image: /assets/images/dynamic/logo.gif
-description: A plant detection Flutter app aims to provide diease detection and insights about plants.
+image: /assets/images/dynamic/farmhelp/logo.png
+description: Plant Disease Detection Cross platform App built with Flutter.
 tags:
   - Flutter
   - Dart
@@ -17,7 +17,7 @@ tags:
 During my third year of university, I undertook a module on the Internet of Things. As part of this module, we were tasked to create a app which solve agriculture problem. I decided to create a app which can help farmers to identify the disease of their plants. This project is under devlopment and part of Accenture hack and community service project.
 
 
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+
 <a name="readme-top"></a>
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
