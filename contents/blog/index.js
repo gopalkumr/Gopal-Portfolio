@@ -36,5 +36,6 @@ export const postSlugs = [
   'IASF-2024-STUDENT-FORUM',
   'OpenStack-using-ministack-installation-in-ubuntu',
   'install-hadoop-using-docker',
-  'Internship-at-IITD'
+  'Internship-at-IITD',
+  'Install-ns2-nam-xgraph-in-ubuntu',
 ]
