@@ -1,5 +1,5 @@
 ---
-title: Flutter Animated Rive
+title: Flutter-animated-rive
 date: 2024-08-18
 image: /assets/images/dynamic/Flutter-animated-rive/Homepage-flutter-rive.png
 description: Flutter web built with Rive.
