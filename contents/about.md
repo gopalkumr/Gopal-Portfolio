@@ -1,6 +1,6 @@
 Hey there, tech enthusiasts! 👋 I'm Gopal Kumar, and I'm on a thrilling journey exploring the vast and dynamic world of technology. Let me take you through my passion-filled adventure in the realm of bits and bytes.
 
-If you're Looking for resume, please click here [Resume](https://bit.ly/gopalkumar-resume)
+If you're Looking for resume, please click here [Resume](https://gopalkumargupta1.hackerresume.io/126fe83a-872d-4830-8827-d9a243695fe6)
 
 ## 🚀 A Tech Odyssey
 
