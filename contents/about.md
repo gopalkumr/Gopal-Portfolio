@@ -5,6 +5,7 @@ If you're Looking for resume, please click here [Resume](https://gopalkumargupta
 get the hugginface here [Huggingface](https://huggingface.co/gopalkumr)
 
 
+
 ## 🚀 A Tech Odyssey
 
 From an early age, I found myself captivated by the magic of technology. The endless possibilities and the power to transform ideas into reality fascinated me. This fascination has evolved into a burning passion that propels me forward in my academic and professional pursuits.
