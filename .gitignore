@@ -90,3 +90,4 @@ sw.*
 # Netlify Functions output
 .netlify
 assets/images/dynamic/IITD/dms_iitd.mp4
+.aider*
