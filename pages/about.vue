@@ -6,7 +6,7 @@
     <div class="about__text">
       <div class="about__image">
         <lazy-image
-          src="/assets/images/dynamic/Gopal_final_about.JPG"
+          src="/assets/images/dynamic/gopal-grey-background.png"
           alt="Gopal"
           sizes="(min-width: 768px) 50vw, 100vw"
         />

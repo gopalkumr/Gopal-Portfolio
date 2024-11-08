@@ -1,9 +1,11 @@
 <template>
   <main class="home">
     <div class="home__banner">
-      <headshots />
+      <div class="home__headshot">
+        <headshots />
+      </div>
       <h1 class="home__title">
-        Hi, I’m <span class="home__title--primary">Gopal!</span>
+        Hi, I'm <span class="home__title--primary">Gopal!</span>
       </h1>
       <div ref="description" class="home__description">
         <markdown :markdown="markdown" />
@@ -92,6 +94,23 @@ export default {
       (calc(50% + 80rem) 60% 55rem)
     )
   );
+}
+
+.home__banner {
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.home__headshot {
+  max-width: 250px;
+  margin: 0 auto 2rem;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
 }
 
 .home__title {

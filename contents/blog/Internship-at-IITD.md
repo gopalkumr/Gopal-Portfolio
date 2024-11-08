@@ -13,13 +13,14 @@ tags:
 
 ---
 
-![sitting-in-iitd-field-ground](/assets/images/dynamic/IITD/gopal_iitd.png)
+![Group Photo with Team](/assets/images/dynamic/IITD/ihfc_group_photo.jpeg)
 
 
 
 ## My Internship Experience at IIT Delhi
 
   So, Let's start from the beginning.
+  
   There's Enterpreneurship and Development Programme called IHFC READY at IIT Delhi. I applied for the same and got selected for the Research and Development Internship at IIT Delhi. This programme aimed to Support the Startups and Entrepreneurs in their journey. I was assigned to work on a project related to Machine Learning and Data Science. The project was about developing a predictive model for a real-world problem using Machine Learning algorithms. I was excited to work on this project as it aligned with my interests and career goals.
   I was working with Problem statement of Drone Where my Job was to Develop the Machine Learning Model with can predict the mismanagement in Public gathering and can help in managing the crowd. The project was challenging and required me to apply my knowledge of Machine Learning, Data Science, and Python programming. I was eager to learn new concepts and enhance my skills during this internship.
   
