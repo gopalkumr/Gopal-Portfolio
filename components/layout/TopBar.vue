@@ -1,5 +1,8 @@
 <template>
   <header class="header">
+    <div class="banner">
+    Please visit <a href="https://gopalkumr.netlify.app" target="_blank">gopalkumr.netlify.app, we'll back soon to the main domain</a>
+    </div>
     <div class="header__content">
       <div class="header__logo">
         <nuxt-link to="/">Gopal Kumar</nuxt-link>
@@ -51,6 +54,15 @@ export default {
   @media print {
     display: none;
   }
+}
+
+.banner {
+  background-color: #f8d7da;
+  color: #721c24;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #f5c6cb;
 }
 
 .header__content {
