@@ -1,7 +1,8 @@
 <template>
   <header class="header">
-    <div class="banner">
-    Please visit <a href="https://gopalkumr.netlify.app" target="_blank">gopalkumr.netlify.app, we'll back soon to the main domain</a>
+    <div v-if="showBanner" class="banner">
+      Please visit <a href="https://gopalkumr.netlify.app" target="_blank">gopalkumr.netlify.app, we'll back soon to the main domain</a>
+      <button class="banner__close" @click="closeBanner">×</button>
     </div>
     <div class="header__content">
       <div class="header__logo">
@@ -27,6 +28,16 @@ export default {
     NavBar,
     Hamburger,
     ThemeToggle
+  },
+  data() {
+    return {
+      showBanner: true
+    }
+  },
+  methods: {
+    closeBanner() {
+      this.showBanner = false
+    }
   }
 }
 </script>
@@ -63,6 +74,25 @@ export default {
   padding: 0.5rem;
   font-size: 0.875rem;
   border-bottom: 1px solid #f5c6cb;
+  position: relative;
+}
+
+.banner__close {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #721c24;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 .header__content {
