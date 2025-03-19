@@ -1,8 +1,6 @@
 <template>
   <header class="header">
-    <div class="banner">
-    Please visit <a href="https://gopalkumr.netlify.app" target="_blank">gopalkumr.netlify.app, we'll back soon to the main domain</a>
-    </div>
+
     <div class="header__content">
       <div class="header__logo">
         <nuxt-link to="/">Gopal Kumar</nuxt-link>

@@ -13,9 +13,7 @@ tags:
 
 ---
 
-![Group Photo with Team](/assets/images/dynamic/IITD/ihfc_group_photo.jpeg)
-
-
+Check the live work here [visionml.tech](https://visionml.tech).
 
 ## My Internship Experience at IIT Delhi
 
@@ -66,6 +64,7 @@ We're working in collaboration with Dr Aksh sondhi, Dr Venkat and other Top Prof
 The Expose of IIT and Professor with their Almuni is pricesless.
 
 
+For more technical insights, visit [visionml.tech](https://visionml.tech).
 
 ```
 This Blog is being updated, Stay Tune for more updates.
