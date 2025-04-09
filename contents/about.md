@@ -1,78 +1,76 @@
-Hey there, tech enthusiasts! 👋 I'm Gopal Kumar, and I'm on a thrilling journey exploring the vast and dynamic world of technology. Let me take you through my passion-filled adventure in the realm of bits and bytes.
+# Hello, World! I'm Gopal Kumar 👨‍💻
 
-If you're Looking for resume, please click here [Resume](https://gopalkumargupta1.hackerresume.io/126fe83a-872d-4830-8827-d9a243695fe6)
+I'm a Final Year Student passionate about building intelligent systems that solve real-world problems. Currently exploring the intersection of sensor fusion, computer vision, and autonomous systems.
 
-get the hugginface here [Huggingface](https://huggingface.co/gopalkumr)
+**[Resume](https://gopalkumargupta1.hackerresume.io/126fe83a-872d-4830-8827-d9a243695fe6)** | **[Hugging Face](https://huggingface.co/gopalkumr)** | **[GitHub](https://github.com/gopalkumr)** | **[LinkedIn](https://www.linkedin.com/in/gopalkumar0/)**
 
+## 🔧 Tech Stack
 
+- **Languages**: Python, C++, JavaScript, Dart
+- **ML/AI**: TensorFlow, PyTorch, Computer Vision, Sensor Fusion, Kalman Filters
+- **Web/Mobile**: Flutter, React, Node.js
+- **Cloud**: Azure, Google Cloud
+- **Tools**: Git, Docker, Linux
 
-## 🚀 A Tech Odyssey
+## 💼 Professional Experience
 
-From an early age, I found myself captivated by the magic of technology. The endless possibilities and the power to transform ideas into reality fascinated me. This fascination has evolved into a burning passion that propels me forward in my academic and professional pursuits.
+### Sensor Fusion Researcher | Multicoreware Inc
+*2022-2023*
 
-## 💡 Academic Quest
+Working at the cutting edge of autonomous vehicle technology, focusing on:
+- Researching and implementing advanced sensor fusion algorithms
+- Processing and analyzing VOD (Vehicle Object Detection) datasets
+- Developing Kalman filter implementations for multi-sensor data integration (Lidar, Radar, Camera)
+- Building robust perception systems for autonomous navigation
 
-Currently pursuing a Bachelor's in Technology with a specialization in Information Technology at Kalasalingam Academy of Research and Education, every class, every project is a stepping stone in my quest for knowledge. The academic journey is not just about earning grades; it's about absorbing the intricacies of technology and applying them creatively.
-- *Kalasalingam Academy of Research and Education*
-- Graduation: May 2025
-- Score: 8.3
+[Company Details](https://multicorewareinc.com/)
 
+### R&D Intern | IIT Delhi
+*2024*
 
-
-## 🌐 Professional Ventures
-
-Diving into the professional world, I had the incredible opportunity to intern at the Technology Virtual Experience Program. This virtual stint exposed me to the realms of data analysis, cybersecurity, and forensic technology. It was more than an internship; it was a hands-on experience that fueled my passion further.
-
-Now, as a R&D intern at IIT Delhi, I'm working cutting edge Machine learning model eg. CSRNET to manage and track the Crowd More efficiently 
-
-
-### Sensor Fusion Researcher at Multicoreware Inc
-
-Now, as a Sensor Fusion Researcher at Multicoreware Inc, I find myself at the forefront of cutting-edge technology. Researching autonomous vehicle sensor fusion is not just a job; it's a thrilling adventure into the future of transportation.
-
-Key Responsibilities:
-
-- Conducting in-depth research on sensor fusion algorithms.
-- Utilizing the VOD dataset for predicting and enhancing vehicle actions.
-- Implementing and testing Kalman filter algorithms on raw Lidar, Radar, and Camera data from the VOD dataset.
-
-[Details](https://multicorewareinc.com/)
+Contributed to crowd management research using computer vision:
+- Implemented CSRNET (Congested Scene Recognition Network) for efficient crowd tracking
+- Optimized ML models for real-time crowd density estimation
+- Collaborated with research teams on computer vision applications
 
 
-## 🎓 Continuous Learning
+### Technology Virtual Experience Program | Intern
+*2022*
 
-Certifications have become my way of staying ahead in the ever-evolving tech landscape. From NDG Linux Unhatched by Cisco to Microsoft Certified: Azure AI Fundamentals, each certification is a badge of honor in my relentless pursuit of excellence.
+Gained hands-on experience in:
+- Data analysis and visualization
+- Cybersecurity fundamentals
+- Digital forensics techniques
 
-## 💻 Projects that Speak
+## 🎓 Education
 
-Projects are my playground, where I bring ideas to life. Farmhelp, a Flutter app for plant disease detection, and Neo, an Android and web app for plant leaf infection detection, reflect my commitment to leveraging technology for real-world solutions.
+**Bachelor of Technology in Information Technology**  
+*Kalasalingam Academy of Research and Education*  
+Graduation: May 2025 | CGPA: 8.3/10
 
-## 🔗 Connecting in the Digital Realm
 
-Technology is not just about code and circuits; it's about connections. You can find me sharing my thoughts and discoveries on platforms like [LinkedIn](https://www.linkedin.com/in/gopalkumar0/) and [Medium](https://gopalkumr.medium.com/). Stack Overflow and GitHub are my virtual spaces where I contribute and collaborate with the global tech community.
+## 🏆 Certifications
 
-## 🚀 Tech Enthusiast Forever
+- Microsoft Certified: Azure AI Fundamentals (Jan 2023)
+- Microsoft Certified: Azure Fundamentals (Jan 2023)
+- Google Cloud Digital Leader (Aug 2023)
+- NDG Linux Unhatched by Cisco
+- Python Programming by University of Michigan (Coursera, Nov 2023)
 
-As I continue this exhilarating journey, my passion for technology remains unwavering. It's not just a career choice; it's a lifestyle, a commitment to pushing boundaries and embracing the ever-changing tech landscape.
+## 🔗 Connect & Collaborate
 
-Join me in this odyssey, and let's explore the future together!
+I believe in the power of open-source and knowledge sharing. Find me on:
+- [LinkedIn](https://www.linkedin.com/in/gopalkumar0/)
+- [Medium](https://gopalkumr.medium.com/)
+- [Stack Overflow](https://stackoverflow.com/users/yourusername)
+- [GitHub](https://github.com/gopalkumr)
 
-## certifications
+## 💡 Current Focus
 
-Certifications have become my way of staying ahead in the ever-evolving tech landscape. Each certification is a badge of honor in my relentless pursuit of excellence.
+Currently diving deeper into:
+- Advanced sensor fusion techniques
+- Transformer architectures for computer vision
+- Edge ML deployment optimization
+- Autonomous systems development
 
-### NDG Linux Unhatched by Cisco
-- [Learn more](https://www.netacad.com/)
-
-### Microsoft Certified: Azure Fundamentals
-- Obtained on: January 15, 2023
-
-### Microsoft Certified: Azure AI Fundamentals
-- Obtained on: January 14, 2023
-
-### Google Cloud Digital Leader Training Specialization
-- Obtained on: August 3, 2023
-
-### Getting Started with Python by University of Michigan (Coursera)
-- Obtained on: November 3, 2023
-- [Learn more](#certifications)
+Let's build something amazing together! Feel free to reach out for collaborations or just to chat about tech.

@@ -37,9 +37,11 @@ export const projectSlugs = [
 
   //this has to be removed
   // add the project title here
+  'vgpt',
+  'visionml',
   'icon-packs',
   'Farmhelp',
   'Flutter-animated-rive',
-  'plant-diseases-detection-with-custom-api'
+  'plant-diseases-detection-with-custom-api',
 
 ]
