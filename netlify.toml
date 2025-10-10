@@ -1,11 +1,11 @@
 [build]
   publish = "dist"
-  command = "yarn install && yarn generate"
+  command = "./build.sh"
 
 [build.environment]
   CI = "1"
-  NODE_VERSION = "18"
-  NODE_OPTIONS = "--max-old-space-size=4096"
+  NODE_VERSION = "16"
+  NODE_OPTIONS = "--max-old-space-size=3072"
 
 [functions]
   directory = "functions"
