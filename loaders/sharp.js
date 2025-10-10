@@ -78,18 +78,14 @@ module.exports = function (source) {
 
     // Convert to given format and quality
     images = images.map((image) => {
-      const targetFormat = /^heif?$/i.test(format) ? 'jpeg' : format;
       const formatOptions = {
         quality: parseInt(params.quality) || options.quality
       };
-      
-      try {
-        return image.toFormat(targetFormat, formatOptions);
-      } catch (err) {
-        console.warn(`Warning: Failed to convert to ${targetFormat}, falling back to JPEG`);
-        return image.toFormat('jpeg', { quality: options.quality });
-      }
-    })
+      return image.toFormat(format, formatOptions);
+    });
+
+    // Convert to buffers
+    Promise.all(images.map((image) => image.toBuffer())).then((buffers) => {
 
     // Convert to buffers
     Promise.all(images.map((image) => image.toBuffer())).then((buffers) => {
@@ -115,8 +111,8 @@ module.exports = function (source) {
           callback(null, `module.exports = ${paths[0]}`)
         }
       }
-    })
-  })
-}
+    });
+  });
+};
 
-module.exports.raw = true
+module.exports.raw = true;
