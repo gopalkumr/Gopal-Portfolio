@@ -81,10 +81,6 @@ module.exports = function (source) {
       const formatOptions = {
         quality: parseInt(params.quality) || options.quality
       };
-      // Skip any HEIF processing
-      if (/^heif?$/i.test(format)) {
-        return image;
-      }
       return image.toFormat(format, formatOptions);
     });
 

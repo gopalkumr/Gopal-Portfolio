@@ -6,7 +6,6 @@
   CI = "1"
   NODE_VERSION = "18"
   NODE_OPTIONS = "--max-old-space-size=4096"
-  SHARP_DISABLE_HEIF = "1"
 
 [functions]
   directory = "functions"
