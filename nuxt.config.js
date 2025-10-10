@@ -181,17 +181,8 @@ export default {
         'node_modules/vue-material-design-icons'
       )
 
-      // Custom image loader using sharp
-      config.module.rules.forEach((rule) => {
-        if (rule.test && rule.test.test('.png')) {
-          rule.use = [
-            {
-              loader: path.resolve(__dirname, 'loaders', 'sharp'),
-              options: { quality: 80 }
-            }
-          ]
-        }
-      })
+      // Using default image loader
+      // Sharp loader removed to fix build issues
 
       // Markdown loader
       config.module.rules.unshift({
