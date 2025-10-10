@@ -202,15 +202,7 @@ export default {
             {
               loader: path.resolve(__dirname, 'loaders', 'sharp'),
               options: {
-                quality: 80,
-                formatOptions: {
-                  heif: {
-                    compression: 'av1',
-                    lossless: false,
-                    quality: 80,
-                    effort: 5
-                  }
-                }
+                quality: 80
               }
             }
           ]

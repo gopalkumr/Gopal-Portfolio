@@ -17,15 +17,7 @@ module.exports = function (source) {
     {
       disable: this.mode === 'development',
       quality: 80,
-      sizes: [320, 640, 1280, 1920],
-      formatOptions: {
-        heif: {
-          compression: 'av1',
-          lossless: false,
-          quality: 80,
-          effort: 5
-        }
-      }
+      sizes: [320, 640, 1280, 1920]
     },
     getOptions(this)
   )
@@ -86,11 +78,17 @@ module.exports = function (source) {
 
     // Convert to given format and quality
     images = images.map((image) => {
+      const targetFormat = /^heif?$/i.test(format) ? 'jpeg' : format;
       const formatOptions = {
-        quality: parseInt(params.quality) || options.quality,
-        ...(options.formatOptions?.[format] || {})
+        quality: parseInt(params.quality) || options.quality
       };
-      return image.toFormat(format, formatOptions)
+      
+      try {
+        return image.toFormat(targetFormat, formatOptions);
+      } catch (err) {
+        console.warn(`Warning: Failed to convert to ${targetFormat}, falling back to JPEG`);
+        return image.toFormat('jpeg', { quality: options.quality });
+      }
     })
 
     // Convert to buffers
