@@ -17,7 +17,15 @@ module.exports = function (source) {
     {
       disable: this.mode === 'development',
       quality: 80,
-      sizes: [320, 640, 1280, 1920]
+      sizes: [320, 640, 1280, 1920],
+      formatOptions: {
+        heif: {
+          compression: 'av1',
+          lossless: false,
+          quality: 80,
+          effort: 5
+        }
+      }
     },
     getOptions(this)
   )
@@ -78,9 +86,11 @@ module.exports = function (source) {
 
     // Convert to given format and quality
     images = images.map((image) => {
-      return image.toFormat(format)[format]({
-        quality: parseInt(params.quality) || options.quality
-      })
+      const formatOptions = {
+        quality: parseInt(params.quality) || options.quality,
+        ...(options.formatOptions?.[format] || {})
+      };
+      return image.toFormat(format, formatOptions)
     })
 
     // Convert to buffers
