@@ -2,7 +2,7 @@
 
 I'm a Final Year Student passionate about building intelligent systems that solve real-world problems. Currently exploring the intersection of sensor fusion, computer vision, and autonomous systems.
 
-**[Resume](https://gopalkumargupta1.hackerresume.io/126fe83a-872d-4830-8827-d9a243695fe6)** | **[Hugging Face](https://huggingface.co/gopalkumr)** | **[GitHub](https://github.com/gopalkumr)** | **[LinkedIn](https://www.linkedin.com/in/gopalkumar0/)**
+**[Resume](https://www.overleaf.com/read/mzcvjyxxnxks#b838bd)** | **[Hugging Face](https://huggingface.co/gopalkumr)** | **[GitHub](https://github.com/gopalkumr)** | **[LinkedIn](https://www.linkedin.com/in/gopalkumar0/)**
 
 ## 🔧 Tech Stack
 
