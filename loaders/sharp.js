@@ -86,29 +86,24 @@ module.exports = function (source) {
 
     // Convert to buffers
     Promise.all(images.map((image) => image.toBuffer())).then((buffers) => {
-
-    // Convert to buffers
-    Promise.all(images.map((image) => image.toBuffer())).then((buffers) => {
       if (params.inline && !params.srcset) {
         // Output inline base64
-        const base64 = buffers[0].toString('base64')
-        const result = `data:image/${format};base64,${base64}`
-
-        callback(null, `module.exports = "${result}";`)
+        const base64 = buffers[0].toString('base64');
+        const result = `data:image/${format};base64,${base64}`;
+        callback(null, `module.exports = "${result}";`);
       } else {
         // Emit files
-        const name = `img/[contenthash:8].${format}`
-        const paths = buffers.map((buffer) => emitFile(name, buffer))
+        const name = `img/[contenthash:8].${format}`;
+        const paths = buffers.map((buffer) => emitFile(name, buffer));
 
         // Output srcset or individual path
         if (params.srcset) {
           const srcset = paths.map((path, index) => {
-            return `${path} + " ${options.sizes[index]}w"`
-          })
-
-          callback(null, `module.exports = ${srcset.join(' + "," + ')}`)
+            return `${path} + " ${options.sizes[index]}w"`;
+          });
+          callback(null, `module.exports = ${srcset.join(' + "," + ')}`);
         } else {
-          callback(null, `module.exports = ${paths[0]}`)
+          callback(null, `module.exports = ${paths[0]}`);
         }
       }
     });
