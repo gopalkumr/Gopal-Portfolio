@@ -1,6 +1,6 @@
 [build]
   publish = "dist"
-  command = "yarn install && yarn build && yarn generate"
+  command = "yarn install && yarn generate"
 
 [build.environment]
   CI = "1"
