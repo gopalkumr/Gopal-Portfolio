@@ -37,5 +37,8 @@ export const postSlugs = [
   'OpenStack-using-ministack-installation-in-ubuntu',
   'install-hadoop-using-docker',
   'Internship-at-IITD',
+  'Day1-at-amazon',
+  'Interview-Experiance-at-amazon',
+  'Transforming-the-Transformer',
 
 ]
