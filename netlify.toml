@@ -1,10 +1,12 @@
 [build]
   publish = "dist"
-  command = "yarn generate"
+  command = "yarn install && yarn build && yarn generate"
 
 [build.environment]
   CI = "1"
   NODE_VERSION = "18"
+  SHARP_IGNORE_INTEGRITY = "1"
+  NODE_OPTIONS = "--max-old-space-size=4096"
 
 [functions]
   directory = "functions"
