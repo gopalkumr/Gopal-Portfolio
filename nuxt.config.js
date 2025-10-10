@@ -143,7 +143,7 @@ export default {
   // Generate sitemap
   sitemap: {
     gzip: true,
-    hostname: 'gopal.vercel.app', //check and replace if there's any problem presist
+    hostname: process.env.URL || 'https://gopal-kumar.netlify.app',
     routes
   },
   // Generate dynamic routes and 404 fallback
