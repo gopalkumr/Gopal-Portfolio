@@ -1,21 +1,13 @@
 import fs from 'fs'
 import path from 'path'
-
-// Modes for frontmatter-markdown-loader
 import Mode from 'frontmatter-markdown-loader/mode'
-
-// Load routes for dynamic content
 import routes from './contents/routes'
-
-// Import configuration
 import markdown from './config/markdown'
 import minify from './config/minify'
-
-// Open Graph
 import { openGraphTags } from './config/opengraph'
 import head from './config/head'
 
-// Load primary color from sass
+// Load primary color from sass variables
 const [, primaryColor] = fs
   .readFileSync(path.join(__dirname, 'assets', 'scss', '_variables.scss'), {
     encoding: 'utf8'
@@ -23,16 +15,25 @@ const [, primaryColor] = fs
   .match(/\$color__primary:\s*([^;]+);/)
 
 export default {
+  // ✅ Ensure Netlify-compatible static generation
   target: 'static',
-  // Content of page head
+  ssr: false,
+
+  // ✅ Safe fallback page for Netlify routing (SPA)
+  generate: {
+    fallback: true,
+    routes: [...routes, '/meta/', ...routes.map((route) => `/meta${route}`)]
+  },
+
+  // ✅ Recaptcha configuration
   recaptcha: {
     hideBadge: false,
-    siteKey: '6Lf4XbAoAAAAAO75S80KvVXYAVl_w1V_sIpA6LvI', // Replace with your actual Site Key
-    size: 'invisible', // Adjust this as needed
+    siteKey: process.env.SITE_RECAPTCHA_KEY || '6Lf4XbAoAAAAAO75S80KvVXYAVl_w1V_sIpA6LvI',
+    size: 'invisible',
     version: 2
   },
 
-
+  // ✅ Page head configuration
   head: {
     title: 'Gopal portfolio',
     titleTemplate: '%s • Personal Blog',
@@ -56,23 +57,9 @@ export default {
       { rel: 'preconnect', href: 'https://cdn.jsdelivr.net' },
       { rel: 'dns-prefetch', href: 'https://www.google-analytics.com' },
       { rel: 'dns-prefetch', href: 'https://cdn.jsdelivr.net' },
-      {
-        rel: 'apple-touch-icon',
-        sizes: '180x180',
-        href: '/apple-touch-icon.png'
-      },
-      {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '32x32',
-        href: '/favicon-32x32.png'
-      },
-      {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '16x16',
-        href: '/favicon-16x16.png'
-      },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
       { rel: 'manifest', href: '/site.webmanifest' },
       { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#3355ff' }
     ],
@@ -89,14 +76,17 @@ export default {
     ],
     __dangerouslyDisableSanitizers: ['noscript', 'script']
   },
-  // Loading bar
+
+  // ✅ Global loading bar
   loading: {
     color: primaryColor,
     duration: 3000
   },
-  // Global CSS
+
+  // ✅ Global CSS
   css: ['~/assets/scss/default.scss'],
-  // Plugins to load before mounting the app
+
+  // ✅ Plugins
   plugins: [
     '~/plugins/auth.js',
     '~/plugins/components.js',
@@ -106,7 +96,8 @@ export default {
     '~/plugins/markdown.client.js',
     '~/plugins/tabbing.client.js'
   ],
-  // Nuxt.js build modules
+
+  // ✅ Build Modules
   buildModules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
@@ -114,9 +105,11 @@ export default {
     '@nuxtjs/google-analytics',
     '@nuxtjs/pwa'
   ],
-  // Nuxt.js modules
+
+  // ✅ Modules
   modules: ['@nuxtjs/recaptcha', '@nuxtjs/sitemap'],
-  // Instead of importing into every component
+
+  // ✅ SCSS resources
   styleResources: {
     scss: [
       '~/assets/scss/_variables.scss',
@@ -124,48 +117,42 @@ export default {
       '~/assets/scss/_typography.scss'
     ]
   },
-  // Google Analytics configuration
+
+  // ✅ Google Analytics
   googleAnalytics: {
     id: 'UA-115006226-1'
   },
-  recaptcha: {
-    hideBadge: false,
-    siteKey: process.env.SITE_RECAPTCHA_KEY,
-    size: 'invisible',
-    version: 2
-  },
-  // Nuxt.js PWA configuration
-  pwa: {
-    icon: false,
-    meta: false,
-    manifest: false
-  },
-  // Generate sitemap
+
+  // ✅ Sitemap configuration
   sitemap: {
     gzip: true,
     hostname: process.env.URL || 'https://gopal-kumar.netlify.app',
     routes
   },
-  // Generate dynamic routes and 404 fallback
-  generate: {
-    fallback: true,
-    routes: [...routes, '/meta/', ...routes.map((route) => `/meta${route}`)]
-  },
-  // Add trailing slashes to match Netlify
+
+  // ✅ Router - add trailing slash for Netlify
   router: {
     trailingSlash: true
   },
-  // Renderer options for preloading
+
+  // ✅ Renderer configuration for preload optimization
   render: {
     bundleRenderer: {
       shouldPreload: (file, type) => {
-        // Preload woff2 fonts
         if (type === 'font') return /\.woff2$/.test(file)
         return ['script', 'style'].includes(type)
       }
     }
   },
-  // Build configuration
+
+  // ✅ PWA Configuration
+  pwa: {
+    icon: false,
+    meta: false,
+    manifest: false
+  },
+
+  // ✅ Build optimizations and loaders
   build: {
     filenames: {
       app: ({ isDev }) => (isDev ? '[name].js' : '[contenthash:7].js'),
@@ -178,32 +165,29 @@ export default {
       video: ({ isDev }) =>
         isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'
     },
-    html: {
-      minify
-    },
+    html: { minify },
     postcss: null,
+
     extend(config, { isClient, loaders: { vue } }) {
-      // Make sure Vue knows about lazy loaded images
+      // Allow Nuxt to handle lazy-loaded images properly
       if (isClient) {
         vue.transformAssetUrls.img = ['data-src', 'src']
         vue.transformAssetUrls.source = ['data-srcset', 'srcset']
       }
 
-      // Resolve path to material design icons
+      // Resolve material design icons alias
       config.resolve.alias.icons = path.resolve(
         __dirname,
         'node_modules/vue-material-design-icons'
       )
 
-      // Replace default image loaders with custom loader
+      // Custom image loader using sharp
       config.module.rules.forEach((rule) => {
-        if (rule.test.test('.png')) {
+        if (rule.test && rule.test.test('.png')) {
           rule.use = [
             {
               loader: path.resolve(__dirname, 'loaders', 'sharp'),
-              options: {
-                quality: 80
-              }
+              options: { quality: 80 }
             }
           ]
         }
@@ -215,9 +199,7 @@ export default {
         loader: 'frontmatter-markdown-loader',
         options: {
           mode: [Mode.HTML, Mode.BODY, Mode.VUE_RENDER_FUNCTIONS],
-          vue: {
-            root: 'markdown'
-          },
+          vue: { root: 'markdown' },
           markdown
         }
       })
