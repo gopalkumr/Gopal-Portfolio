@@ -4,7 +4,7 @@
 
 [build.environment]
   CI = "1"
-  NODE_VERSION = "16.20.2"
+  NODE_VERSION = "18"
 
 [functions]
   directory = "functions"
