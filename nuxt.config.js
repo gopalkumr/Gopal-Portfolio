@@ -74,7 +74,7 @@ export default {
         href: '/favicon-16x16.png'
       },
       { rel: 'manifest', href: '/site.webmanifest' },
-      { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#3355ff' }
+      { rel: 'mask-icon', href: '/assets/images/dynamic/gopal-grey-background.png', color: '#3355ff' }
     ],
     script: [
       {
