@@ -1,4 +1,5 @@
+Software Engineer at amazon.
 
-I Build things for *Web*, *Android*, *ios* and *Machine Learning*. 
-Explore the other part of the portfolio section to know more about me.
+I build things for *Web*, *Android*, *iOS*, and *Machine Learning*.  
 
+Explore the other part of the **portfolio section** to know more about me.

@@ -112,10 +112,4 @@ My interview process was a mix of technical rigor and deep behavioral evaluation
 
 If you're preparing for Amazon, focus equally on coding fundamentals and behavioural stories. Practice STAR, own your code, and be honest — the interviewers value clear thinking and ownership.
 
-   
-
-If you'd like, I can:
-
-- Convert some of these behavioural examples into polished STAR answer templates for your use
-- Create a short, shareable TL;DR for LinkedIn/Twitter
-- Add example code snippets for the graph and queue problems (with explanations)
+follow me on Medium [medium](https://medium.com/@gopalkumr)
