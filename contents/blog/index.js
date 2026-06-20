@@ -31,14 +31,14 @@ export const postSlugs = [
   'nuxt-netlify-forms-and-recaptcha',
   'optimising-the-fonts-on-my-website',
   'styling-a-sectionlist-in-react-native',
-  'Leading-the-MLSC-As-an-Core-Team-Member',
-  'How-to-Get-Azure-credits-for-Students',
-  'IASF-2024-STUDENT-FORUM',
-  'OpenStack-using-ministack-installation-in-ubuntu',
+  'leading-the-mlsc-as-a-core-team-member',
+  'how-to-get-azure-credits-for-students',
+  'iasf-2024-student-forum',
+  'OpenStack-using-microstack-installation-in-ubuntu',
   'install-hadoop-using-docker',
-  'Internship-at-IITD',
+  'internship-at-iitd',
   'Day1-at-amazon',
-  'Interview-Experiance-at-amazon',
+  'Interview-Experience-at-amazon',
   'Transforming-the-Transformer',
-
+  'prompt-as-a-skill-knowledge-pre-seeding'
 ]

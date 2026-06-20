@@ -34,10 +34,10 @@ Long-term thinking is baked into the engineering process. Teams plan for durabil
 
 ## Technical learnings so far
 
-  Internal tooling: I've learned the basics of Amazon's internal deployment and CI tooling. The tooling emphasizes safety — automated rollbacks, staged rollouts, and tight metrics driven release gates.
-  Observability: production telemetry (logs, metrics, traces) is first class. Dashboards and automatic alarms help us react quickly.
-  Testing & quality: testing spans unit, integration, and simulated downstream failures. Chaos style tests and canaries are commonly used for risk mitigation.
-  Data driven decisions: experiments and feature flags power incremental launches and validate hypotheses with real user data.
+- **Internal tooling:** I've learned the basics of Amazon's internal deployment and CI tooling. The tooling emphasizes safety — automated rollbacks, staged rollouts, and tight metrics-driven release gates.
+- **Observability:** Production telemetry (logs, metrics, traces) is first-class. Dashboards and automatic alarms help us react quickly.
+- **Testing & quality:** Testing spans unit, integration, and simulated downstream failures. Chaos-style tests and canaries are commonly used for risk mitigation.
+- **Data-driven decisions:** Experiments and feature flags power incremental launches and validate hypotheses with real user data.
 
 These practices are not unique to Amazon, but their maturity and integration into the development lifecycle are exceptional.
 

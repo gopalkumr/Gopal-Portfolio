@@ -2,8 +2,8 @@ import GoTrue from 'gotrue-js'
 import Vue from 'vue'
 
 const auth = new GoTrue({
-  APIUrl: 'https://gopalkumr.netlify.app/.netlify/identity',
-  setCookie: true //enable it
+  APIUrl: 'https://gopal.codes/.netlify/identity',
+  setCookie: true // enable it
 })
 
 function transformUser(user) {

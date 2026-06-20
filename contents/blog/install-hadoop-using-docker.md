@@ -1,39 +1,38 @@
 ---
-title: Install Hadoop using Docker in deb Unix
-
+title: Install Hadoop using Docker on Ubuntu/Debian
 date: 2024-03-24
-
-description: install Hadoop using Docker in Ubuntu and run your first MapReduce job.
-
+description: Install Apache Hadoop using Docker on Ubuntu Linux and run your first MapReduce word count job.
 tags:
   - Cloud Computing
   - Hadoop
   - MapReduce
   - Ubuntu
-  - DevStack
   - Docker
+---
+
+![Hadoop on Docker](/assets/images/dynamic/hadoop/Hadoop-using-docker.png)
+
+In this article, we will discuss how to install Apache Hadoop using Docker on Ubuntu/Debian Linux and run a simple MapReduce job. 
+
+While there are traditional ways to install Hadoop, they often require extensive configuration and setup of local Java environments, SSH keys, and system XML configuration files. Using Docker simplifies the installation, enabling you to run a single-node Hadoop cluster in minutes.
 
 ---
 
-![Hadoop-on-docker](/assets/images/dynamic/hadoop/Hadoop-using-docker.png)
+## Requirements
 
-In This article we will be discussing about the installation of Hadoop using Docker in Debian Unix. 
-There's genral ways to install Hadoop but that required a lot of configuration and setup. But Docker makes it easy to install Hadoop in your system.
+Before starting, ensure your system meets the following recommendations:
+- **OS:** Ubuntu 18.04 LTS or later (or any Debian-based Unix distribution)
+- **Engine:** Docker and Docker Compose installed
+- **RAM:** Minimum 4GB (8GB+ recommended)
+- **Disk Space:** 20GB of free space
 
+---
 
-### Requirements
-- Ubuntu 18.04 or later
-- Docker
-- 4GB of RAM
-- 20GB of disk space
+## Step 1: Install Docker on Ubuntu
 
+To get started, you must have Docker running on your machine. If you do not have Docker installed, you can set it up by copying and running the following commands in your terminal:
 
-
-## Installation of Docker in Ubuntu
-
-To Get started with Hadoop using Docker in Ubuntu, you need to have Docker installed in your system. If you don't have Docker installed in your system,  just copy and paste the command in terminal
-  
-  ```sh
+```bash
 # Add Docker's official GPG key:
 sudo apt-get update
 sudo apt-get install ca-certificates curl
@@ -47,91 +46,109 @@ echo \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
+```
 
-  ```
+Install the Docker Engine and its related plugins:
 
-To install the latest version of Docker, you can use the following command:
-
-```sh
+```bash
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt install docker-compose
 ```
 
-```sh
- sudo apt install docker-compose
+Once the installation is complete, verify that the Docker daemon is active and running.
+
+---
+
+## Step 2: Install Hadoop using Docker
+
+Clone the GitHub repository containing the pre-configured Hadoop Docker Compose files:
+
+```bash
+git clone https://github.com/gopalkumr/Hadoop-on-Docker
 ```
 
-once the installtion has done, we can move to step
+Navigate to the cloned repository and spin up the Hadoop container services (NameNode, DataNode, ResourceManager, and NodeManager) in detached mode:
 
-## Installation of Hadoop using Docker
-
-clone the githhub repository
-  
-  ```sh
-  git clone https://github.com/gopalkumr/Hadoop-on-Docker
-  ```
-once you have cloned the repo, Now it's time to run the docker container using the following command
-
-```sh
+```bash
 cd Hadoop-on-Docker
 sudo docker-compose up -d
+```
+
+Verify that all containers are active:
+
+```bash
 docker container ls
 ```
 
-Now you have to copy the namenode folder from cloned repository to the docker container using the following command
+---
 
-go to the cloned repository and run the following command
+## Step 3: Copy Files and Access the Container
 
-```sh
+Copy the sample code files from the cloned repository directly into the running NameNode container:
+
+```bash
 sudo docker cp code namenode:/
 ```
-then execute the command to enter into the namenode container
-  
-  ```sh
- sudo docker exec -it namenode /bin/bash
-  ```
-Now it's time to create a directory in HDFS using the following command
 
-```sh
+Next, open an interactive bash session inside the NameNode container:
+
+```bash
+sudo docker exec -it namenode /bin/bash
+```
+
+---
+
+## Step 4: Configure HDFS Directories
+
+Within the NameNode container shell, create the target input directories in the Hadoop Distributed File System (HDFS) and initialize a new text file:
+
+```bash
 hdfs dfs -mkdir -p /user/root/input/
 hdfs dfs -touchz /user/root/input/data.txt
 ```
-Now we have to add some content in data.txt file using the following command
 
-```sh
-echo "The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. It is designed to scale up from single servers to thousands of machines, each offering local computation and storage. Rather than rely on hardware to deliver high-availability, the library itself is designed to detect and handle failures at the application layer, so delivering a highly-available service on top of a cluster of computers, each of which may be prone to failures.
+Append sample text to your newly created `data.txt` file:
 
-The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. It is designed to scale up from single servers to thousands of machines, each offering local computation and storage. Rather than rely on hardware to deliver high-availability, the library itself is designed to detect and handle failures at the application layer, so delivering a highly-available service on top of a cluster of computers, each of which may be prone to failures.
-
-The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. It is designed to scale up from single servers to thousands of machines, each offering local computation and storage. Rather than rely on hardware to deliver high-availability, the library itself is designed to detect and handle failures at the application layer, so delivering a highly-available service on top of a cluster of computers, each of which may be prone to failures.
-" | hdfs dfs -appendToFile - /user/root/input/data.txt
+```bash
+echo "The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. It is designed to scale up from single servers to thousands of machines, each offering local computation and storage. Rather than rely on hardware to deliver high-availability, the library itself is designed to detect and handle failures at the application layer, so delivering a highly-available service on top of a cluster of computers, each of which may be prone to failures." | hdfs dfs -appendToFile - /user/root/input/data.txt
 ```
-You can verify if the data has added into data.txt or not
-  
-  ```sh
-  hadoop fs -cat /user/root/input/data.txt
-  ```
-if all these steps have completed, Then you can run the MapReduce job using the following command
 
-```sh
- cd /code/Hadoop_Code
+Verify that the content was successfully appended:
+
+```bash
+hadoop fs -cat /user/root/input/data.txt
 ```
-make sure if the wordCount.jar is located at this directory.
-if the Wordcount.jar is exist in this directory, you can run the following command to run the MapReduce job
 
-```sh
+---
+
+## Step 5: Run the MapReduce Word Count Job
+
+Navigate to the directory containing the compiled MapReduce Java executables:
+
+```bash
+cd /code/Hadoop_Code
+```
+
+Verify that `wordCount.jar` exists in this folder. Once confirmed, run the MapReduce job using the following command:
+
+```bash
 hadoop jar wordCount.jar org.apache.hadoop.examples.WordCount input output
 ```
-## Displaying the output
 
-once the job has completed, you can check the output using the following command
+---
 
-```sh
+## Step 6: Displaying the Output
+
+After the MapReduce execution finishes successfully, you can view the computed word count results by reading the output files generated in HDFS:
+
+```bash
 hdfs dfs -cat /user/root/output/*
 ```
-The output Should look like this 
 
-![OPENSTACK UBUNTU](/assets/images/dynamic/hadoop/hadoop-output.png)
+The output in your console should look like this:
 
-This Blog is being updated. Please Pardon if you find any mistake or report us at gopalkumargupta337@gmail.com
+![Hadoop MapReduce Output](/assets/images/dynamic/hadoop/hadoop-output.png)
 
-Last Updated 11:59 24th March 2024
+---
+
+*This post is periodically updated. If you run into any issues or have questions, feel free to contact me at gopalkumargupta337@gmail.com.*

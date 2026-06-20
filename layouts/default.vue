@@ -4,6 +4,7 @@
     <nuxt />
     <bottom-bar />
     <mouse />
+    <chat-bot />
   </div>
 </template>
 
@@ -11,12 +12,14 @@
 import TopBar from '~/components/layout/TopBar'
 import BottomBar from '~/components/layout/BottomBar'
 import Mouse from '~/components/Mouse'
+import ChatBot from '~/components/ChatBot'
 
 export default {
   components: {
     TopBar,
     BottomBar,
-    Mouse
+    Mouse,
+    ChatBot
   }
 }
 </script>
