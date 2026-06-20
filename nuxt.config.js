@@ -181,8 +181,23 @@ export default {
         'node_modules/vue-material-design-icons'
       )
 
-      // Using default image loader
-      // Sharp loader removed to fix build issues
+      // Find the default Nuxt image loader and remove jpg/png so it doesn't conflict
+      const imageRule = config.module.rules.find((rule) => String(rule.test).includes('png'))
+      if (imageRule) {
+        // Original is usually /\.(png|jpe?g|gif|svg|webp|avif)$/i
+        // We change it to ignore jpe?g and png
+        imageRule.test = /\.(gif|svg|webp|avif)$/i
+      }
+
+      // Sharp image loader for optimized images
+      config.module.rules.push({
+        test: /\.(jpe?g|png)$/i,
+        loader: 'responsive-loader',
+        options: {
+          adapter: require('responsive-loader/sharp'),
+          esModule: false
+        }
+      })
 
       // Markdown loader
       config.module.rules.unshift({

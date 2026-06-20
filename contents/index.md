@@ -1,4 +1,8 @@
-Software engineer at Amazon <span aria-hidden="true"></span> <img src="/brands/amazon.svg" alt="Amazon logo" style="height:1.2em; vertical-align:middle; margin-left:0.4rem;" />
+### Software Engineer at <img src="/amazon.svg" alt="Amazon" width="18" height="18" style="vertical-align: text-bottom;"/>
+
+I build things for *Web*, *Android*, *iOS*, and *Machine Learning*.  
+
+Explore the other part of the **portfolio section** to know more about me.
 
 I Build things for *Web*, *Android*, *ios* and *Machine Learning*. 
 Explore the other part of the portfolio section to know more about me.

@@ -24,26 +24,25 @@ export default {
   },
   computed: {
     preview() {
-      return require('~/assets/images/dynamic/gopal-grey-background.png')
+      return require('~/assets/images/dynamic/gopal-grey-background.png').src
     },
     previewWebp() {
-      return require('~/assets/images/dynamic/gopal-grey-background.png?format=webp')
+      return require('~/assets/images/dynamic/gopal-grey-background.png?format=webp').src
     },
     previewAvif() {
-      return require('~/assets/images/dynamic/gopal-grey-background.png?format=avif')
+      return require('~/assets/images/dynamic/gopal-grey-background.png?format=avif').src
     },
     srcset() {
       if (!this.mounted) return
-      // Use a static headshot image
-      return require('~/assets/images/dynamic/gopal-grey-background.png')
+      return require('~/assets/images/dynamic/gopal-grey-background.png').src
     },
     srcsetWebp() {
       if (!this.mounted) return
-      return require('~/assets/images/dynamic/gopal-grey-background.png?format=webp')
+      return require('~/assets/images/dynamic/gopal-grey-background.png?format=webp').src
     },
     srcsetAvif() {
       if (!this.mounted) return
-      return require('~/assets/images/dynamic/gopal-grey-background.png?format=avif')
+      return require('~/assets/images/dynamic/gopal-grey-background.png?format=avif').src
     }
   },
   mounted() {

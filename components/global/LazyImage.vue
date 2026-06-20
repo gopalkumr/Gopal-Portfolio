@@ -1,25 +1,18 @@
 <template>
-  <span class="lazy" :style="{ maxWidth }">
+  <span class="lazy" :class="{ 'lazy--loaded': loaded }" :style="{ maxWidth }">
     <picture :style="{ paddingBottom }">
-      <source :data-srcset="srcsetWebp" :sizes="sizes" type="image/webp" />
-      <source :data-srcset="srcset" :sizes="sizes" :type="meta.format" />
+      <source v-if="srcWebp" :srcset="srcWebp" type="image/webp" :sizes="sizes" />
       <img
-        :width="meta.width"
-        :height="meta.height"
-        :src="lqip"
+        v-if="imgSrc"
+        ref="img"
+        :width="imgWidth"
+        :height="imgHeight"
+        :src="imgSrc"
         :alt="alt"
-        class="lazy__image lazy__image--load"
+        class="lazy__image"
+        @load="onLoad"
+        @error="onLoad"
       />
-      <!-- Fallback image -->
-      <noscript inline-template>
-        <img
-          :width="meta.width"
-          :height="meta.height"
-          :src="original"
-          :alt="alt"
-          class="lazy__image lazy__image--loaded"
-        />
-      </noscript>
     </picture>
   </span>
 </template>
@@ -44,27 +37,72 @@ export default {
       default: 'auto'
     }
   },
+  data() {
+    return {
+      loaded: false
+    }
+  },
   computed: {
     srcRel() {
       return this.src.replace(/^\/assets\/images\/dynamic\//, '')
     },
-    srcset() {
-      return require(`~/assets/images/dynamic/${this.srcRel}?srcset`)
+    imgData() {
+      try {
+        // responsive-loader returns { src, srcSet, width, height, ... }
+        const data = require(`~/assets/images/dynamic/${this.srcRel}`)
+        console.log('imgData resolved for', this.srcRel, data)
+        return data
+      } catch (e) {
+        console.error('imgData failed for', this.srcRel, e)
+        return null
+      }
     },
-    srcsetWebp() {
-      return require(`~/assets/images/dynamic/${this.srcRel}?srcset&format=webp`)
+    imgDataWebp() {
+      try {
+        return require(`~/assets/images/dynamic/${this.srcRel}?format=webp`)
+      } catch (e) {
+        return null
+      }
     },
-    lqip() {
-      return require(`~/assets/images/dynamic/${this.srcRel}?size=20&format=jpeg&inline`)
+    imgSrc() {
+      if (!this.imgData) return ''
+      // responsive-loader wraps the url with __webpack_public_path__ eval,
+      // so .src is the resolved public URL string
+      return typeof this.imgData === 'string' ? this.imgData : this.imgData.src
     },
-    meta() {
-      return require(`~/assets/images/dynamic/${this.srcRel}?meta`)
+    srcWebp() {
+      if (!this.imgDataWebp) return null
+      return typeof this.imgDataWebp === 'string'
+        ? this.imgDataWebp
+        : this.imgDataWebp.src
     },
-    original() {
-      return require(`~/assets/images/dynamic/${this.srcRel}`)
+    imgWidth() {
+      return this.imgData && this.imgData.width ? this.imgData.width : undefined
+    },
+    imgHeight() {
+      return this.imgData && this.imgData.height
+        ? this.imgData.height
+        : undefined
     },
     paddingBottom() {
-      return `calc(100% * ${this.meta.height / this.meta.width})`
+      if (this.imgWidth && this.imgHeight) {
+        return `calc(100% * ${this.imgHeight / this.imgWidth})`
+      }
+      return '56.25%'
+    }
+  },
+  mounted() {
+    console.log('LazyImage mounted. loaded:', this.loaded, 'imgSrc:', this.imgSrc)
+    // If image already loaded before mounted (cached), mark as loaded
+    if (this.$refs.img && this.$refs.img.complete) {
+      console.log('Image already complete', this.srcRel)
+      this.loaded = true
+    }
+  },
+  methods: {
+    onLoad() {
+      console.log('Image onLoad fired', this.srcRel)
+      this.loaded = true
     }
   }
 }
@@ -80,30 +118,24 @@ export default {
 
   picture {
     border-radius: $border-radius;
+    display: block;
     overflow: hidden;
     position: relative;
-
-    @supports (backdrop-filter: blur(1rem)) {
-      &::after {
-        backdrop-filter: blur(1rem);
-        content: '';
-        inset: 0;
-        position: absolute;
-        transition: backdrop-filter 150ms $transition__normal--out;
-      }
-    }
-  }
-
-  &--loaded picture::after {
-    backdrop-filter: none;
   }
 }
 
 .lazy__image {
+  display: block;
   height: 100%;
   inset: 0;
   object-fit: cover;
   position: absolute;
   width: 100%;
+  opacity: 1 !important; /* Force opacity to 1 for debugging */
+  transition: opacity 400ms ease;
+}
+
+.lazy--loaded .lazy__image {
+  opacity: 1;
 }
 </style>
