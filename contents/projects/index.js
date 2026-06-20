@@ -34,6 +34,8 @@ export async function projectLoader(projectSlug) {
 }
 
 export const projectSlugs = [
+  'vgpt',
+  'visionml',
   'icon-packs',
   'farmhelp',
   'flutter-animated-rive',

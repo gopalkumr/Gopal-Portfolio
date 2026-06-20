@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    
+
     <div class="header__content">
       <div class="header__logo">
         <nuxt-link to="/">Gopal Kumar</nuxt-link>
