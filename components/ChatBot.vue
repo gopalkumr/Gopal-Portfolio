@@ -1,5 +1,23 @@
 <template>
-  <div class="chatbot">
+  <div class="chatbot" :class="{ 'chatbot--open': isOpen }">
+    <!-- Speech bubble tooltip -->
+    <transition name="chatbot-fade">
+      <div v-if="showTooltip && !isOpen" class="chatbot__tooltip" role="tooltip">
+        <div class="chatbot__tooltip-content">
+          <span class="chatbot__tooltip-badge">AI</span>
+          <span class="chatbot__tooltip-text">I'm Gopal's AI Assistant. Ask me anything about him! 🤖</span>
+        </div>
+        <button
+          class="chatbot__tooltip-close"
+          type="button"
+          aria-label="Dismiss tooltip"
+          @click.stop="dismissTooltip"
+        >
+          ✕
+        </button>
+        <div class="chatbot__tooltip-arrow" />
+      </div>
+    </transition>
     <!-- Floating trigger bubble -->
     <button
       id="chatbot-toggle-btn"
@@ -25,7 +43,7 @@
         </svg>
       </span>
       <span v-else class="chatbot__bubble-close">✕</span>
-      <span v-if="!isOpen" class="chatbot__bubble-label">Ask me</span>
+      <span v-if="!isOpen" class="chatbot__bubble-label">Ask about me</span>
     </button>
 
     <!-- Chat window -->
@@ -43,7 +61,7 @@
               </div>
             </div>
           </div>
-          <button class="chatbot__close-btn" type="button" aria-label="Close chat" @click="toggleChat">✕</button>
+          <button class="chatbot__close-btn" type="button" aria-label="Close chat" @click.stop.prevent="toggleChat">✕</button>
         </div>
 
         <!-- Messages -->
@@ -114,6 +132,7 @@ export default {
       isOpen: false,
       inputText: '',
       loading: false,
+      showTooltip: false,
       messages: [
         {
           role: 'assistant',
@@ -122,14 +141,52 @@ export default {
       ]
     }
   },
+  watch: {
+    isOpen(val) {
+      if (process.client) {
+        if (val) {
+          document.body.style.overflow = 'hidden'
+        } else {
+          document.body.style.overflow = ''
+        }
+      }
+    }
+  },
+  mounted() {
+    const dismissed = localStorage.getItem('gopal_chatbot_tooltip_dismissed')
+    if (!dismissed) {
+      setTimeout(() => {
+        this.showTooltip = true
+      }, 1200)
+    }
+  },
   methods: {
     toggleChat() {
+      if (this.isOpen) {
+        // Blur input to dismiss mobile soft keyboard cleanly
+        if (document.activeElement && typeof document.activeElement.blur === 'function') {
+          document.activeElement.blur()
+        }
+        // Force layout and fixed position recalculation
+        setTimeout(() => {
+          window.scrollTo(window.scrollX, window.scrollY)
+        }, 100)
+      } else {
+        // Dismiss tooltip permanently on open
+        this.dismissTooltip()
+      }
       this.isOpen = !this.isOpen
       if (this.isOpen) {
         this.$nextTick(() => {
           this.$refs.inputField && this.$refs.inputField.focus()
           this.scrollToBottom()
         })
+      }
+    },
+    dismissTooltip() {
+      this.showTooltip = false
+      if (process.client) {
+        localStorage.setItem('gopal_chatbot_tooltip_dismissed', 'true')
       }
     },
     async sendMessage() {
@@ -190,6 +247,17 @@ export default {
   position: fixed;
   right: 1.75rem;
   z-index: 9999;
+
+  @media (max-width: 480px) {
+    &--open {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 100dvh;
+      width: 100vw;
+    }
+  }
 }
 
 .chatbot__bubble {
@@ -215,12 +283,20 @@ export default {
     animation: none;
     border-radius: 50%;
     padding: 0.7rem;
+
+    @media (max-width: 480px) {
+      display: none;
+    }
   }
 
   svg {
     flex-shrink: 0;
     height: 1.5rem;
     width: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.7rem;
   }
 }
 
@@ -239,6 +315,10 @@ export default {
   font-weight: 600;
   letter-spacing: 0.01em;
   white-space: nowrap;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 }
 
 @keyframes chatbot-pulse {
@@ -268,10 +348,14 @@ export default {
   width: 22rem;
 
   @media (max-width: 480px) {
-    bottom: 5rem;
-    height: calc(100dvh - 7rem);
-    right: -1.75rem;
-    width: calc(100vw - 1rem);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    border: none;
+    border-radius: 0;
   }
 }
 
@@ -521,5 +605,115 @@ export default {
 .chatbot-slide-leave-to {
   opacity: 0;
   transform: translateY(0.75rem) scale(0.97);
+}
+
+/* ── Tooltip ───────────────────────────────────────────── */
+.chatbot__tooltip {
+  background: $color__body;
+  border: $border-weight solid $color__primary--muted;
+  border-radius: 0.75rem;
+  bottom: 4.5rem;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 30%);
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem 0.75rem 0.85rem;
+  position: absolute;
+  right: 0;
+  width: 16rem;
+  z-index: 9998;
+  animation: chatbot-bounce 2s infinite ease-in-out;
+  
+  @media (max-width: 480px) {
+    right: -0.75rem;
+    width: 14rem;
+  }
+}
+
+.chatbot__tooltip-content {
+  align-items: flex-start;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.chatbot__tooltip-badge {
+  background: $color__primary;
+  border-radius: 0.25rem;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 0.1rem 0.3rem;
+  text-transform: uppercase;
+  margin-top: 0.1rem;
+}
+
+.chatbot__tooltip-text {
+  color: $color__text;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.chatbot__tooltip-close {
+  background: none;
+  border: none;
+  color: $color__text--muted;
+  cursor: pointer;
+  font-size: 0.8rem;
+  line-height: 1;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  transition: color 150ms ease;
+
+  &:hover {
+    color: $color__text;
+  }
+}
+
+.chatbot__tooltip-arrow {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid $color__primary--muted;
+  bottom: -6px;
+  height: 0;
+  position: absolute;
+  right: 1.5rem;
+  width: 0;
+  
+  &::after {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid $color__body;
+    bottom: 1px;
+    content: "";
+    height: 0;
+    left: -5px;
+    position: absolute;
+    width: 0;
+  }
+}
+
+@keyframes chatbot-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* ── Fade transition ───────────────────────────────────── */
+.chatbot-fade-enter-active,
+.chatbot-fade-leave-active {
+  transition: opacity 250ms ease, transform 250ms ease;
+}
+
+.chatbot-fade-enter,
+.chatbot-fade-leave-to {
+  opacity: 0;
+  transform: translateY(0.5rem);
 }
 </style>

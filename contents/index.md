@@ -2,8 +2,4 @@
 
 I build things for *Web*, *Android*, *iOS*, and *Machine Learning*.  
 
-Explore the other part of the **portfolio section** to know more about me.
-
-I Build things for *Web*, *Android*, *ios* and *Machine Learning*. 
-Explore the other part of the portfolio section to know more about me.
-
+Explore the other part of the **portfolio section** to know more about me Or simply ask my assistant ai about me down below. 
